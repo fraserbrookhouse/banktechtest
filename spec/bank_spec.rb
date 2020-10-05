@@ -21,12 +21,12 @@ describe "#Bank" do
       bank = Bank.new
       Timecop.freeze(2020, 4, 20)
       bank.stub(:balance) { 100 }
-      bank.store_transaction(50)
-      bank.stub(:balance) { 100 }
-      bank.store_transaction(-70)
-      expect(bank.transaction_history[1]["date"]).to eq("20/04/2020")
-      expect(bank.transaction_history[1]["credit"]).to eq(50)
-      expect(bank.transaction_history[1]["balance"]).to eq(100)
+      bank.store_transaction(50, "credit")
+      bank.stub(:balance) { 30 }
+      bank.store_transaction(70, "debit")
+      expect(bank.transaction_history[0][:date]).to eq("20/04/2020")
+      expect(bank.transaction_history[0][:credit]).to eq(50)
+      expect(bank.transaction_history[0][:balance]).to eq(100)
     end
   end
 end
