@@ -1,8 +1,11 @@
-describe "Bank" do
+require 'bank'
+
+describe "#Bank" do
   describe "#deposit" do
     it "takes a number and adds it to balance" do
-      Bank.deposit(50)
-      expect(Bank.balance).to eq(50)
+      bank = Bank.new
+      bank.deposit(50)
+      expect(bank.balance).to eq(50)
     end
   end
 end
