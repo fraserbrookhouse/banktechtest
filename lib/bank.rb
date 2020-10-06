@@ -17,6 +17,8 @@ class Bank
     store_transaction(money, "debit")
   end
 
+  private
+
   def store_transaction(money, type)
     time = Time.now
     time = time.strftime("%d/%m/%Y")
