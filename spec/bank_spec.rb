@@ -20,9 +20,9 @@ describe "#Bank" do
     it "stores the date, amount deposited or withdrawn and balance from a transaction" do
       bank = Bank.new
       Timecop.freeze(2020, 4, 20)
-      bank.stub(:balance) { 100 }
+      allow(bank).to receive(:balance).and_return(100)
       bank.store_transaction(50, "credit")
-      bank.stub(:balance) { 30 }
+      allow(bank).to receive(:balance).and_return(100)
       bank.store_transaction(70, "debit")
       expect(bank.transaction_history[0][:date]).to eq("20/04/2020")
       expect(bank.transaction_history[0][:credit]).to eq(50)
