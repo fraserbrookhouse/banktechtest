@@ -41,7 +41,11 @@ describe "#Bank" do
       bank = Bank.new
       test_transaction = {date: "23/06/2020", "credit": 50, balance: 20}
       bank.transaction_history.push(test_transaction)
-      expect(bank.print_statement).to eq("date || credit || debit || balance\n 23/06/2020 || 50.00 || || 20.00")
+      statement = <<~STATEMENT
+        date || credit || debit || balance
+        23/06/2020 || 50.00 || || 20.00
+        STATEMENT
+      expect { bank.print_statement }.to output(statement).to_stdout
     end
   end
 end

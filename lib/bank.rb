@@ -18,7 +18,7 @@ class Bank
   end
 
   def print_statement
-    statement = "date || credit || debit || balance\n "
+    statement = "date || credit || debit || balance\n"
     @transaction_history.each do |transaction|
       if transaction.key?(:credit)
         string = "#{transaction[:date]} || #{sprintf('%.2f', transaction[:credit])} || || #{sprintf('%.2f', transaction[:balance])}"
@@ -26,9 +26,9 @@ class Bank
         string = "#{transaction[:date]} || || #{sprintf('%.2f', transaction[:debit])} || #{sprintf('%.2f', transaction[:balance])}"
       end
       statement += string
-      statement += "\n "
+      statement += "\n"
     end
-    statement.chomp("\n ")
+    print statement
   end
 
   private
