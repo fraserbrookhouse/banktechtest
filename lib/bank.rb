@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require 'statement'
 
 class Bank
   attr_reader :balance, :transaction_history
@@ -19,17 +20,7 @@ class Bank
   end
 
   def print_statement
-    statement = "date || credit || debit || balance\n"
-    @transaction_history.each do |transaction|
-      if transaction.key?(:credit)
-        string = "#{transaction[:date]} || #{format('%.2f', transaction[:credit])} || || #{format('%.2f', transaction[:balance])}"
-      else
-        string = "#{transaction[:date]} || || #{format('%.2f', transaction[:debit])} || #{format('%.2f', transaction[:balance])}"
-      end
-      statement += string
-      statement += "\n"
-    end
-    print statement
+    Statement.print_statement(@transaction_history)
   end
 
   private
