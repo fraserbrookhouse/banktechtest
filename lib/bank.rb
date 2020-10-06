@@ -17,6 +17,10 @@ class Bank
     store_transaction(money, "debit")
   end
 
+  def print_statement
+    @transaction_history.map
+  end
+
   private
 
   def store_transaction(money, type)

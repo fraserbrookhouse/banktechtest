@@ -35,4 +35,13 @@ describe "#Bank" do
       expect(bank.transaction_history[1][:balance]).to eq(80)
     end
   end
+
+  describe "#print_statement" do
+    it "prints a statement of past transactions" do
+      bank = Bank.new
+      test_transaction = {date: "23/06/2020", "credit": 50, balance: 20}
+      bank.transaction_history.push(test_transaction)
+      expect(bank.print_statement).to eq("date || credit || debit || balance\n 23/06/2020 || 50.00 || || 20.00)")
+    end
+  end
 end
