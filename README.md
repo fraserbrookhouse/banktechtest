@@ -59,4 +59,6 @@ I want to be able to print a bank statement
 2. Run 'bundle install' in your terminal.
 3. Run 'rspec' in terminal.
 
+### Code Quality
 
+[![BCH compliance](https://bettercodehub.com/edge/badge/fraserbrookhouse/banktechtest?branch=main)](https://bettercodehub.com/)
