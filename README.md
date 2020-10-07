@@ -22,6 +22,41 @@ date || credit || debit || balance
 10/01/2012 || 1000.00 || || 1000.00
 ```
 
+### User stories
+
+As a customer,
+So that I can keep my money safe,
+I want to open a bank account
+
+As a customer,
+So that I can put my money in a safe place.
+I want to be able to deposit money into my bank account
+
+As a customer,
+So that I can use my money when I need to,
+I want to be able to withdraw money from my bank account
+
+As a customer,
+So that I can keep track of my incomings and outgoings,
+I want to be able to print a bank statement 
+
 ### Screenshot of app
 
 ![WorkingApp](assets/working_app.png)
+
+### How to run on your own system
+
+1. Fork/Clone this repo.
+2. Run 'bundle install' in your terminal.
+3. Run 'irb' in your terminal.
+4. Enter "require './lib/bank'" in your terminal.
+5. Enter 'bank = Bank.new' in your terminal to open a new bank account. Replace the first bank with any word of your choosing to change the name.
+6. Interact with the program in your terminal with the following commands 'bank.deposit(amount)', 'bank.withdraw(amount)', and 'bank.print_statement'.
+
+### How to run tests
+
+1. Fork/Clone this repo.
+2. Run 'bundle install' in your terminal.
+3. Run 'rspec' in terminal.
+
+
