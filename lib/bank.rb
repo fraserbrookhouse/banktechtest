@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-require 'statement'
+require_relative 'statement'
 
 class Bank
   attr_reader :balance, :transaction_history
