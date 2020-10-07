@@ -1,7 +1,6 @@
-
+# frozen_string_literal: true
 
 class Statement
-
   def self.print_statement(transactions)
     statement = "date || credit || debit || balance\n"
     transactions.each do |transaction|
